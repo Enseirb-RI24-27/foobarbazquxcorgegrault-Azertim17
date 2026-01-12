@@ -23,6 +23,7 @@ public class Foo {
     }
 
     public void setCorge(Corge corge) {
+        if (this.corge != null) this.corge.setFoo(null);
         this.corge = corge;
     }
 
@@ -34,8 +35,8 @@ public class Foo {
         this.bazs.add(baz);
     }
 
-    public void addGrault(Grault grault) {
-        this.graults.add(grault);
+    public void addGrault() {
+        this.graults.add(new Grault(this));
     }
 
     public Bar getBar() {
